@@ -13,6 +13,13 @@
 
 提交方式：
 
-使用github, pull new request 至 branch ( commit )
+使用github, pull new request 至 branch ( commit )，存放至commit 文件夹下，以人名全拼建立子文件夹。
 
 PS： 可以查看 sample 文件夹内的样例，以作参考。
+
+
+### practice 1-1
+
+目标： 在practice 1 基础之上，追加功能。
+
+描述： 前端页面追加一个 表格table，在每次页面刷新以及点击button时，向后端请求当前数据库中所有打卡记录信息，并更新表格。
