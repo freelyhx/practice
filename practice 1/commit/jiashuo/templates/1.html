@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>home page</title>
+	<meta name="" content="" charset="utf-8">
+	<script src="{{url_for('static',filename='jquery/jquery-1.12.4.min.js')}}"></script>
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				if (!window.localStorage) {
+					console.log("浏览器不支持localstorage");
+				} else {
+					var c = localStorage["id_daka"];
+					if (typeof (c) == undefined) {
+						c = '';
+					};
+					$.get('/sb?id_daka=' + c, '', function (data, status) {
+						if (status) {
+							console.log(data);
+							id = jQuery.parseJSON(data);
+							if (id.success) {
+								localStorage["id_daka"] = id.result;
+							} else {
+								console.log("success");
+							};
+						};
+					});
+				};
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<button type="button">打卡</button>
+</body>
+
+</html>
