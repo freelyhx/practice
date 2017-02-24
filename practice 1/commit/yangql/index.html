@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+
+
+</head>
+
+<body>
+<h1>打卡系统</h1>
+<div id="myDiv"><h2>显示点击次数信息</h2></div>
+<button type="button" onclick="loadXMLDoc()">点我一下</button>
+<script>
+function loadXMLDoc(){
+	var xmlhttp = new XMLHttpRequest();
+
+	if (!window.localStorage){
+		alert('buzhichi!!!!');
+	}
+
+	var userId = localStorage.myId;
+
+	//if (typeof(userId) == undefined){
+	//	userId = '';
+	//}
+
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		    var res = JSON.parse(xmlhttp.responseText);
+		    localStorage.myId = res.result.myId;
+		    document.getElementById('myDiv').innerHTML = res.result.count + res.result.myId;
+		}
+	}
+	xmlhttp.open("GET","click?myName=vion&myId="+userId,true);
+	xmlhttp.send();
+
+}
+</script>
+</body>
