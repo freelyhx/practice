@@ -27,7 +27,7 @@ function loadXMLDoc(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200){
 		    var res = JSON.parse(xmlhttp.responseText);
 		    localStorage.myId = res.result.myId;
-		    document.getElementById('myDiv').innerHTML = res.result.count + res.result.myId;
+		    document.getElementById('myDiv').innerHTML = res.result.myId + ":" + res.result.count;
 		}
 	}
 	xmlhttp.open("GET","click?myName=vion&myId="+userId,true);
