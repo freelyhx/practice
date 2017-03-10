@@ -295,22 +295,48 @@ img {
 </style>
 </head>
 <body>
-<h3>practice 1</h3>
-<p>目标： 写出 browser &lt;--&gt; server &lt;--&gt; database 一整套系统组成的简易打卡功能。</p>
-<p>描述： 前端页面仅有一个 button， 点击后触发事件，向后端提交数据。 后端记录下该台电脑信息，并写入数据库，记录其打卡次数。</p>
-<p>建议： </p>
+<h3>practice 2 --python</h3>
+<p>目标： 读取本地json文件, 并展示或输出为格式化后的多叉树</p>
+<p>样例：</p>
+<pre><code>{
+    &quot;a&quot;:{
+        &quot;b&quot;: 1,
+        &quot;c&quot;: 2
+    },
+    &quot;d&quot;:{
+        &quot;e&quot;: 3
+    },
+    &quot;f&quot;: 4
+}
+</code></pre>
+
+<p>转化为：</p>
+<pre><code>           root               
+         /   |   \
+        a    d    f(4)
+      /  \   |   
+   b(1) c(2) e(3)
+</code></pre>
+
+<p>提交方式：使用github, pull new request 至 branch ( commit )，存放至commit 文件夹下，以人名全拼建立子文件夹。</p>
+<h3>practice 2 --javascript</h3>
+<p>目标： 页面结构如下：</p>
+<pre><code>...
+&lt;div&gt;
+    &lt;input id='input' placeholder='input new node'&gt;
+    &lt;input type='button' id='confirm' value='confirm'&gt;  
+&lt;/div&gt;
+&lt;div id='div'&gt;&lt;/div&gt;
+...
+</code></pre>
+
+<p>现需求如下：</p>
 <ol>
-<li>前端js 使用 jquery ajax 向后台提交。</li>
-<li>后台需要能够区分出不同的前端终端。</li>
-<li>数据库可以使用sqlite3，最为简便。</li>
-<li>后端python web 框架建议使用 web.py, flask 或者 tornado 等。</li>
+<li>用户可以在 input 中输入数据, 当点击 &quot;confirm&quot; 按钮时, 触发事件( 假设事件名为 A ).</li>
+<li>事件A触发时, 检查用户输入, 若为非正整数, 丢弃并提示. 若为正整数, 作为参数提交给 callback function.</li>
+<li>在 callback 中, 根据输入数值的大小, 按递增顺序排列将其插入 #div 元素中.</li>
 </ol>
-<p>提交方式：</p>
-<p>使用github, pull new request 至 branch ( commit )，存放至commit 文件夹下，以人名全拼建立子文件夹。</p>
-<p>PS： 可以查看 sample 文件夹内的样例，以作参考。</p>
-<h3>practice 1-1</h3>
-<p>目标： 在practice 1 基础之上，追加功能。</p>
-<p>描述： 前端页面追加一个 表格table，在每次页面刷新以及点击button时，向后端请求当前数据库中所有打卡记录信息，并更新表格。</p>
+<p>提交方式：使用github, pull new request 至 branch ( commit )，存放至commit 文件夹下，以人名全拼建立子文件夹。</p>
 
 </body>
 </html>
